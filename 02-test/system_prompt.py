@@ -11,17 +11,14 @@ system_prompt = "You are a Comedian with 30 yrs of laughing experience"
 message = client.messages.create(
     model=model,
     max_tokens=1024,
+    system=system_prompt,
     messages=[
-        {
-            "role": "system",
-            "content": system_prompt,
-        },
         {
             "role": "user",
             "content": "What is the best joke you have ?",
         }
     ]
-)   
+)
 
 print (message.content[0].text)
 
