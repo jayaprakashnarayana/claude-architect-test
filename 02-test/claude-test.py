@@ -7,10 +7,10 @@ model="claude-sonnet-4-6"
 
 def add_user_message(messages, text):
     user_message = { "role": "user", "content": text}
-    message.append(user_message)
+    messages.append(user_message)
 
 def add_assistant_message(messages, text):
-    assistant_message = {"role": "assistant", "contennt": text}
+    assistant_message = {"role": "assistant", "content": text}
     messages.append(assistant_message)
 
 
@@ -42,7 +42,7 @@ print (message.content[0].text)
 
 messages = []
 
-add_user_message(message, "Define quantum computing in simple terms")
+add_user_message(messages, "Define quantum computing in simple terms")
 
 answer = chat(messages)
 
@@ -50,4 +50,4 @@ add_assistant_message(messages, answer)
 
 add_user_message(messages, "Write another sentence")
 
-final_answer = chat(message)
+final_answer = chat(messages)
